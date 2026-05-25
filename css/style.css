@@ -1024,6 +1024,160 @@ p  { line-height: 1.75; color: var(--mid-grey); font-weight: 300; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 
+/* ---------- MANUFACTURING GIF SECTION ---------- */
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5px;
+  background: rgba(255,255,255,0.05);
+}
+
+.gif-card {
+  background: var(--charcoal);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease);
+}
+.gif-card:hover { transform: scale(1.01); z-index: 2; }
+
+.gif-card__media {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+  background: #111;
+}
+.gif-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animated placeholder (shows when no real GIF yet) */
+.gif-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #0d0d0d;
+}
+
+/* Weave pattern background animation */
+.gif-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 18px,
+    rgba(201,168,76,0.06) 18px,
+    rgba(201,168,76,0.06) 20px
+  ),
+  repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 18px,
+    rgba(201,168,76,0.04) 18px,
+    rgba(201,168,76,0.04) 20px
+  );
+  animation: weaveMove 4s linear infinite;
+}
+@keyframes weaveMove {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(20px, 20px); }
+}
+
+.gif-placeholder__icon {
+  position: relative;
+  z-index: 1;
+  width: 52px; height: 52px;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  animation: iconPulse 2s ease-in-out infinite;
+}
+@keyframes iconPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.3); }
+  50%       { box-shadow: 0 0 0 10px rgba(201,168,76,0); }
+}
+
+.gif-placeholder__label {
+  position: relative;
+  z-index: 1;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+}
+
+.gif-badge {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  z-index: 3;
+}
+
+.gif-card__caption {
+  padding: 1rem 1.2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.gif-card__caption h4 {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.04em;
+}
+.gif-card__caption p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+}
+
+/* Add-your-GIF instruction bar */
+.gif-instructions {
+  margin-top: 2rem;
+  border: 1px dashed rgba(201,168,76,0.2);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.gif-instructions__icon {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.gif-instructions p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+}
+.gif-instructions code {
+  background: rgba(255,255,255,0.06);
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  color: var(--gold);
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
   .editorial { grid-template-columns: 1fr; min-height: auto; }
