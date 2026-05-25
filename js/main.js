@@ -1,114 +1,124 @@
 /* =============================================
    PRAYAN LABELS — main.js
-   Nav toggle · Scroll effects · Active link
    ============================================= */
-
 (function () {
   'use strict';
 
-  /* ---- NAV: hamburger toggle ---- */
-  const hamburger = document.querySelector('.nav__hamburger');
-  const mobileNav = document.querySelector('.nav__mobile');
-
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('open');
-      mobileNav.classList.toggle('open', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
-        hamburger.classList.remove('open');
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    });
-
-    // Close on mobile link click
-    mobileNav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-  /* ---- NAV: scroll shrink ---- */
+  /* ---- NAV: transparent → solid on scroll ---- */
   const nav = document.querySelector('.nav');
   if (nav) {
-    const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 30);
+    const update = () => {
+      if (window.scrollY > 60) {
+        nav.classList.remove('nav--transparent');
+        nav.classList.add('nav--solid');
+      } else {
+        nav.classList.remove('nav--solid');
+        nav.classList.add('nav--transparent');
+      }
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // run once on load
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   }
 
-  /* ---- NAV: active link highlight ---- */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__links a, .nav__mobile a').forEach((link) => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
+  /* ---- NAV: hamburger ---- */
+  const burger = document.querySelector('.nav__hamburger');
+  const mobileNav = document.querySelector('.nav__mobile');
+  if (burger && mobileNav) {
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    document.addEventListener('click', (e) => {
+      if (!burger.contains(e.target) && !mobileNav.contains(e.target)) {
+        burger.classList.remove('open');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+  }
+
+  /* ---- NAV: active link ---- */
+  const page = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav__links a, .nav__mobile a').forEach(a => {
+    if (a.getAttribute('href') === page) a.classList.add('active');
+  });
+
+  /* ---- HERO: bg loaded class for Ken Burns ---- */
+  const heroBg = document.querySelector('.hero__bg');
+  if (heroBg) {
+    const img = new Image();
+    const url = getComputedStyle(heroBg).backgroundImage.match(/url\("?(.+?)"?\)/);
+    if (url) {
+      img.onload = () => heroBg.classList.add('loaded');
+      img.src = url[1];
     }
-  });
-
-  /* ---- SMOOTH SCROLL for anchor links ---- */
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10) || 70;
-        window.scrollTo({
-          top: target.getBoundingClientRect().top + window.scrollY - navH - 16,
-          behavior: 'smooth',
-        });
-      }
-    });
-  });
-
-  /* ---- CONTACT FORM: basic UX ---- */
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      const btn = form.querySelector('[type="submit"]');
-      if (btn) {
-        btn.textContent = 'Sending…';
-        btn.disabled = true;
-      }
-      // Formspree handles the actual POST; re-enable after 3s as fallback
-      setTimeout(() => {
-        if (btn) { btn.textContent = 'Send Inquiry'; btn.disabled = false; }
-      }, 3000);
-    });
   }
 
-  /* ---- INTERSECTION OBSERVER: fade-in on scroll ---- */
-  if ('IntersectionObserver' in window) {
-    const style = document.createElement('style');
-    style.textContent = `
-      .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
-      .fade-in.visible { opacity: 1; transform: none; }
-    `;
-    document.head.appendChild(style);
+  /* ---- SCROLL: smooth anchor ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) {
+        e.preventDefault();
+        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - navH - 8, behavior: 'smooth' });
+      }
+    });
+  });
 
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
+  /* ---- REVEAL on scroll ---- */
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
         if (en.isIntersecting) {
           en.target.classList.add('visible');
           obs.unobserve(en.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll(
-      '.product-card, .usp-card, .cap-card, .gallery-item, .client-logo, .stat'
-    ).forEach((el) => {
-      el.classList.add('fade-in');
+      '.product-card, .product-full-card, .usp-card, .gallery-item-luxury, .stat, .testimonial-card, .step, .reveal'
+    ).forEach(el => {
+      el.classList.add('reveal');
       obs.observe(el);
+    });
+  }
+
+  /* ---- CONTACT form AJAX ---- */
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = form.querySelector('[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          const msg = document.getElementById('successMsg');
+          if (msg) msg.classList.add('show');
+          btn.textContent = 'Sent ✓';
+        } else {
+          btn.textContent = 'Send Inquiry';
+          btn.disabled = false;
+          alert('Something went wrong. Please WhatsApp or call us directly.');
+        }
+      } catch {
+        btn.textContent = 'Send Inquiry';
+        btn.disabled = false;
+      }
     });
   }
 

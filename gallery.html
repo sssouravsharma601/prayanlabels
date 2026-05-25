@@ -3,411 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Prayan Labels gallery — photos of our latkans, woven labels, hang tags and garment label work for brands across India." />
+  <meta name="description" content="Prayan Labels gallery — photos of our latkans, woven labels, hang tags and garment label work." />
   <title>Gallery | Prayan Labels</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0a'/><text y='22' x='5' font-size='18' fill='%23c8a951'>P</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080808'/><text y='23' x='6' font-size='18' fill='%23c9a84c' font-family='Georgia'>P</text></svg>" />
   <style>
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox__img {
-      max-width: 90vw;
-      max-height: 85vh;
-      border-radius: 8px;
-      object-fit: contain;
-    }
-    .lightbox__close {
-      position: absolute;
-      top: 1.5rem; right: 1.5rem;
-      color: #fff;
-      font-size: 2rem;
-      line-height: 1;
-      cursor: pointer;
-      background: none;
-      border: none;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-    .lightbox__close:hover { opacity: 1; }
-
-    /* Gallery masonry-ish layout */
-    .gallery-masonry {
-      columns: 3 280px;
-      column-gap: 1rem;
-    }
-    .gallery-masonry .gallery-item {
-      break-inside: avoid;
-      margin-bottom: 1rem;
-      aspect-ratio: unset;
-      cursor: pointer;
-    }
-    .gallery-masonry .gallery-placeholder {
-      min-height: 200px;
-    }
-    .gallery-masonry .gallery-item:nth-child(3n+1) .gallery-placeholder { min-height: 260px; }
-    .gallery-masonry .gallery-item:nth-child(3n+2) .gallery-placeholder { min-height: 200px; }
-    .gallery-masonry .gallery-item:nth-child(3n)   .gallery-placeholder { min-height: 230px; }
-
-    /* Filter tabs */
-    .filter-tabs {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-    }
-    .filter-tab {
-      padding: 0.5rem 1.2rem;
-      border: 1.5px solid rgba(0,0,0,0.12);
-      border-radius: 100px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--mid-grey);
-      background: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .filter-tab:hover,
-    .filter-tab.active {
-      background: var(--black);
-      border-color: var(--black);
-      color: var(--white);
-    }
+    .lightbox { display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out; }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-width:90vw;max-height:88vh;object-fit:contain;border-radius:2px; }
+    .lightbox__close { position:absolute;top:1.5rem;right:1.5rem;color:#fff;font-size:1.8rem;opacity:0.6;cursor:pointer;background:none;border:none;line-height:1;transition:opacity 0.2s; }
+    .lightbox__close:hover { opacity:1; }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <header class="nav" role="banner">
-    <div class="container nav__inner">
-      <a href="index.html" class="nav__logo">
-        <span class="nav__logo-name">Prayan Labels</span>
-        <span class="nav__logo-tag">Garment Labels Manufacturer</span>
-      </a>
-      <nav class="nav__links">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a href="contact.html" class="btn btn-primary nav__cta">Get a Quote</a>
-      <button class="nav__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    </div>
-  </header>
-  <nav class="nav__mobile">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-    <a href="contact.html" class="btn btn-primary" style="margin-top:0.5rem;">Get a Quote</a>
-  </nav>
-
-  <main>
-
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <span>Gallery</span>
-        </nav>
-        <h1>Gallery</h1>
-        <p>A look at our work — latkans, labels, hang tags and more, produced for brands across India.</p>
-      </div>
-    </section>
-
-    <!-- ===== GALLERY ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section__head">
-          <span class="section-label">Our Work</span>
-          <h2 class="section-title">Product Gallery</h2>
-          <div class="divider"></div>
-          <p class="section-desc">
-            These are placeholder slots for your product photos. Replace each placeholder with a
-            high-resolution image (min 800×800 px) against a clean, neutral background.
-          </p>
-        </div>
-
-        <!-- Filter tabs -->
-        <div class="filter-tabs" role="tablist">
-          <button class="filter-tab active" data-filter="all">All</button>
-          <button class="filter-tab" data-filter="latkans">Latkans</button>
-          <button class="filter-tab" data-filter="woven">Woven Labels</button>
-          <button class="filter-tab" data-filter="tags">Tags</button>
-          <button class="filter-tab" data-filter="washcare">Wash Care</button>
-        </div>
-
-        <!-- Gallery grid -->
-        <div class="gallery-masonry" id="galleryGrid">
-
-          <!-- Each item: data-category for filter, data-src for lightbox -->
-          <div class="gallery-item" data-category="latkans" data-src="" role="button" tabindex="0" aria-label="Latkan photo 1">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="5" r="3"/><path d="M12 8v13M8 14l4 4 4-4"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="woven" data-src="" role="button" tabindex="0" aria-label="Woven label photo 1">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="tags" data-src="" role="button" tabindex="0" aria-label="Hang tag photo 1">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="washcare" data-src="" role="button" tabindex="0" aria-label="Wash care label photo 1">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="latkans" data-src="" role="button" tabindex="0" aria-label="Latkan photo 2">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="5" r="3"/><path d="M12 8v13M8 14l4 4 4-4"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="woven" data-src="" role="button" tabindex="0" aria-label="Woven label photo 2">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="tags" data-src="" role="button" tabindex="0" aria-label="Printed tag photo 1">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="latkans" data-src="" role="button" tabindex="0" aria-label="Latkan photo 3">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="5" r="3"/><path d="M12 8v13M8 14l4 4 4-4"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="washcare" data-src="" role="button" tabindex="0" aria-label="Wash care label photo 2">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="tags" data-src="" role="button" tabindex="0" aria-label="Hang tag photo 2">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="woven" data-src="" role="button" tabindex="0" aria-label="Woven label photo 3">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="latkans" data-src="" role="button" tabindex="0" aria-label="Latkan photo 4">
-            <div class="gallery-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="5" r="3"/><path d="M12 8v13M8 14l4 4 4-4"/></svg>
-            </div>
-          </div>
-
-        </div><!-- /gallery-masonry -->
-
-        <p style="text-align:center;font-size:0.82rem;color:var(--light-grey);margin-top:2rem;">
-          📸 Product photos will be added here. To add images, place them in <code>images/products/</code> and update the <code>data-src</code> attributes above.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- ===== CLIENTS ===== -->
-    <section class="section section--grey" id="clients">
-      <div class="container">
-        <div class="section__head section__head--center">
-          <span class="section-label">Trusted By</span>
-          <h2 class="section-title">Brands We've Supplied</h2>
-          <div class="divider divider--center"></div>
-          <p class="section-desc">
-            From boutique designers to large garment exporters — here are some of the brands that trust Prayan Labels.
-          </p>
-        </div>
-        <div class="clients-grid">
-          <!-- Replace these with actual brand logos as <img> tags once available -->
-          <div class="client-logo">Brand Logo</div>
-          <div class="client-logo">Brand Logo</div>
-          <div class="client-logo">Brand Logo</div>
-          <div class="client-logo">Brand Logo</div>
-          <div class="client-logo">Brand Logo</div>
-          <div class="client-logo">Brand Logo</div>
-          <div class="client-logo">Brand Logo</div>
-          <div class="client-logo">Brand Logo</div>
-        </div>
-        <p style="text-align:center;font-size:0.82rem;color:var(--light-grey);margin-top:2rem;">
-          Replace placeholders above with actual client brand logos (PNG with transparent background recommended).
-        </p>
-      </div>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section__head section__head--center">
-          <span class="section-label">What Clients Say</span>
-          <h2 class="section-title">Testimonials</h2>
-          <div class="divider divider--center"></div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
-
-          <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:2rem;">
-            <p style="font-style:italic;margin-bottom:1.2rem;font-size:0.95rem;">"Prayan Labels has been our go-to supplier for latkans for three seasons now. Consistent quality, never missed a delivery deadline."</p>
-            <div style="display:flex;align-items:center;gap:0.75rem;">
-              <div style="width:40px;height:40px;background:var(--light-grey);border-radius:50%;opacity:0.4;"></div>
-              <div>
-                <div style="font-weight:600;font-size:0.9rem;">— Client Name</div>
-                <div style="font-size:0.78rem;color:var(--light-grey);">Garment Brand, City</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:2rem;">
-            <p style="font-style:italic;margin-bottom:1.2rem;font-size:0.95rem;">"The wash care labels are excellent — clear print, doesn't fade even after 30+ washes. Our export buyer approved them on first submission."</p>
-            <div style="display:flex;align-items:center;gap:0.75rem;">
-              <div style="width:40px;height:40px;background:var(--light-grey);border-radius:50%;opacity:0.4;"></div>
-              <div>
-                <div style="font-weight:600;font-size:0.9rem;">— Client Name</div>
-                <div style="font-size:0.78rem;color:var(--light-grey);">Garment Exporter, City</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:2rem;">
-            <p style="font-style:italic;margin-bottom:1.2rem;font-size:0.95rem;">"Responsive team, fast sampling and no quality surprises in bulk. That's rare in this industry."</p>
-            <div style="display:flex;align-items:center;gap:0.75rem;">
-              <div style="width:40px;height:40px;background:var(--light-grey);border-radius:50%;opacity:0.4;"></div>
-              <div>
-                <div style="font-weight:600;font-size:0.9rem;">— Client Name</div>
-                <div style="font-size:0.78rem;color:var(--light-grey);">Fashion Label, City</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <p style="text-align:center;font-size:0.82rem;color:var(--light-grey);margin-top:2rem;">
-          Replace placeholder testimonials with real quotes and client details.
-        </p>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-banner">
-      <div class="container">
-        <h2>Like What You See?</h2>
-        <p>Request a sample of any product — we'll dispatch within 48 hours.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-outline">Request a Sample</a>
-          <a href="https://wa.me/919780333055?text=Hi%2C%20I%20saw%20your%20gallery%20and%20want%20to%20request%20a%20sample." target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Us</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
-    <img class="lightbox__img" id="lightboxImg" src="" alt="Gallery image" />
+<header class="nav nav--transparent">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-name">Prayan Labels</span><span class="nav__logo-tag">Garment Labels Manufacturer</span></a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-gold nav__cta">Get a Quote</a>
+    <button class="nav__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
+</header>
+<nav class="nav__mobile">
+  <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:0.5rem;justify-content:center;">Get a Quote</a>
+</nav>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <div class="footer__brand-name">Prayan Labels</div>
-          <div class="footer__brand-tag">Garment Labels Manufacturer</div>
-          <p class="footer__desc">Supplying premium latkans, woven labels, wash care labels and custom tags to garment brands across India and beyond.</p>
-        </div>
-        <div class="footer__col">
-          <h5>Products</h5>
-          <ul>
-            <li><a href="products.html#latkans">Latkans</a></li>
-            <li><a href="products.html#woven">Woven Labels</a></li>
-            <li><a href="products.html#printed">Printed Tags</a></li>
-            <li><a href="products.html#washcare">Wash Care Labels</a></li>
-            <li><a href="products.html#hang">Hang Tags</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h5>Contact</h5>
-          <ul>
-            <li><a href="tel:+919780333055">+91 97803 33055</a></li>
-            <li><a href="https://wa.me/919780333055" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><a href="contact.html">Send Inquiry</a></li>
-          </ul>
-        </div>
+<main>
+
+<section class="page-hero">
+  <div class="page-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1600&q=80');"></div>
+  <div class="page-hero__overlay"></div>
+  <div class="page-hero__content">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Gallery</span></nav>
+    <h1>Gallery</h1>
+    <p>A look at our work — latkans, labels, hang tags and more, produced for brands across India.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <div style="margin-bottom:3rem;">
+      <span class="eyebrow">Our Work</span>
+      <h2>Product Gallery</h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="gallery-grid-luxury" id="galleryGrid">
+      <div class="gallery-item-luxury g1" data-src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80" alt="Ethnic wear with latkans" loading="lazy"/>
       </div>
-      <div class="footer__bottom">
-        <span>© 2025 Prayan Labels. All rights reserved.</span>
-        <span>Made in India 🇮🇳</span>
+      <div class="gallery-item-luxury g2" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80" alt="Woven label close-up" loading="lazy"/>
+      </div>
+      <div class="gallery-item-luxury g3" data-src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=900&q=85">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=700&q=80" alt="Fashion garment with hang tag" loading="lazy"/>
+      </div>
+      <div class="gallery-item-luxury g4" data-src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=85">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=700&q=80" alt="Wash care label on garment" loading="lazy"/>
+      </div>
+      <div class="gallery-item-luxury g5" data-src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=85">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80" alt="Fashion fabric and labels" loading="lazy"/>
+      </div>
+      <div class="gallery-item-luxury g6" data-src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=900&q=80" alt="Colourful fabric and textile" loading="lazy"/>
+      </div>
+      <div class="gallery-item-luxury g7" data-src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="Fashion editorial" loading="lazy"/>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <a href="https://wa.me/919780333055?text=Hello%2C%20I%27m%20interested%20in%20your%20labels%20and%20latkans." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.525 5.84L.057 23.486a.5.5 0 00.614.614l5.644-1.468A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.803-.537-5.38-1.47l-.386-.232-3.35.871.871-3.35-.232-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-  </a>
+<!-- CLIENTS -->
+<section class="section section--cream" id="clients">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="eyebrow" style="justify-content:center;">Trusted By</span>
+      <h2>Brands We've Supplied</h2>
+      <div class="gold-line gold-line--center"></div>
+      <p style="max-width:520px;margin:0 auto;">From boutique designers to large garment exporters — brands that trust Prayan Labels.</p>
+    </div>
+    <div class="clients-grid">
+      <div class="client-logo">Brand Logo</div>
+      <div class="client-logo">Brand Logo</div>
+      <div class="client-logo">Brand Logo</div>
+      <div class="client-logo">Brand Logo</div>
+      <div class="client-logo">Brand Logo</div>
+      <div class="client-logo">Brand Logo</div>
+      <div class="client-logo">Brand Logo</div>
+      <div class="client-logo">Brand Logo</div>
+    </div>
+  </div>
+</section>
 
-  <script src="js/main.js"></script>
-  <script>
-    // Gallery filter
-    const tabs = document.querySelectorAll('.filter-tab');
-    const items = document.querySelectorAll('.gallery-item');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const filter = tab.dataset.filter;
-        items.forEach(item => {
-          const show = filter === 'all' || item.dataset.category === filter;
-          item.style.display = show ? '' : 'none';
-        });
-      });
-    });
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="eyebrow" style="justify-content:center;">What Clients Say</span>
+      <h2>Testimonials</h2>
+      <div class="gold-line gold-line--center"></div>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <blockquote>Prayan Labels has been our go-to supplier for latkans for three seasons now. Consistent quality, never missed a delivery deadline.</blockquote>
+        <div class="testimonial-cite"><strong>— Client Name</strong>Garment Brand, City</div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>The wash care labels are excellent — clear print, doesn't fade even after 30+ washes. Our export buyer approved them on first submission.</blockquote>
+        <div class="testimonial-cite"><strong>— Client Name</strong>Garment Exporter, City</div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>Responsive team, fast sampling and no quality surprises in bulk. That's rare in this industry.</blockquote>
+        <div class="testimonial-cite"><strong>— Client Name</strong>Fashion Label, City</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Lightbox (only fires when real images are added via data-src)
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        const src = item.dataset.src;
-        if (src) { lightboxImg.src = src; lightbox.classList.add('open'); }
-      });
-    });
-  </script>
+<section class="cta-banner">
+  <div class="cta-banner__bg" style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1600&q=80');"></div>
+  <div class="container cta-banner__content">
+    <h2>Like What You See?</h2>
+    <p>Request a sample of any product — dispatched within 48 hours.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-outline-white">Request a Sample</a>
+      <a href="https://wa.me/919780333055" target="_blank" rel="noopener" class="btn btn-gold">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lbClose">&times;</button>
+  <img id="lbImg" src="" alt=""/>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div><div class="footer__brand-name">Prayan Labels</div><div class="footer__brand-tag">Garment Labels Manufacturer</div><p class="footer__desc">Premium latkans, woven labels, wash care labels and custom tags for India's garment industry.</p></div>
+      <div class="footer__col"><h5>Products</h5><ul><li><a href="products.html#latkans">Latkans</a></li><li><a href="products.html#woven">Woven Labels</a></li><li><a href="products.html#printed">Printed Tags</a></li><li><a href="products.html#washcare">Wash Care Labels</a></li><li><a href="products.html#hang">Hang Tags</a></li></ul></div>
+      <div class="footer__col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h5>Contact</h5><ul><li><a href="tel:+919780333055">+91 97803 33055</a></li><li><a href="https://wa.me/919780333055" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="contact.html">Send Inquiry</a></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2025 Prayan Labels. All rights reserved.</span><span>Made in India 🇮🇳</span></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919780333055?text=Hello%2C%20I%27m%20interested%20in%20your%20labels%20and%20latkans." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.525 5.84L.057 23.486a.5.5 0 00.614.614l5.644-1.468A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.803-.537-5.38-1.47l-.386-.232-3.35.871.871-3.35-.232-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+<script src="js/main.js"></script>
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  document.getElementById('lbClose').onclick = () => lb.classList.remove('open');
+  lb.addEventListener('click', e => { if(e.target===lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') lb.classList.remove('open'); });
+  document.querySelectorAll('.gallery-item-luxury').forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', () => { lbImg.src = el.dataset.src; lb.classList.add('open'); });
+  });
+</script>
 </body>
 </html>
