@@ -3,175 +3,232 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Prayan Labels gallery — photos of our latkans, woven labels, hang tags and garment label work." />
-  <title>Gallery | Prayan Labels</title>
+  <meta name="description" content="Gallery — Prayan Labels & Craft. See our latkans, woven labels, hang tags and craft accessories in action on real garments." />
+  <title>Gallery | Prayan Labels & Craft</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080808'/><text y='23' x='6' font-size='18' fill='%23c9a84c' font-family='Georgia'>P</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f3460'/><text y='23' x='7' font-size='18' fill='%23c9a84c' font-family='Georgia' font-weight='bold'>P</text></svg>" />
   <style>
-    .lightbox { display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out; }
-    .lightbox.open { display:flex; }
-    .lightbox img { max-width:90vw;max-height:88vh;object-fit:contain;border-radius:2px; }
-    .lightbox__close { position:absolute;top:1.5rem;right:1.5rem;color:#fff;font-size:1.8rem;opacity:0.6;cursor:pointer;background:none;border:none;line-height:1;transition:opacity 0.2s; }
-    .lightbox__close:hover { opacity:1; }
+    /* Lightbox */
+    .lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9000;align-items:center;justify-content:center;padding:2rem;}
+    .lb-overlay.open{display:flex;}
+    .lb-overlay img{max-width:90vw;max-height:85vh;border-radius:6px;object-fit:contain;}
+    .lb-close{position:absolute;top:1.5rem;right:2rem;color:#fff;font-size:2rem;cursor:pointer;line-height:1;background:none;border:none;font-family:inherit;}
+    .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;cursor:pointer;background:rgba(255,255,255,0.1);border:none;border-radius:4px;padding:0.5rem 1rem;transition:background .2s;}
+    .lb-prev{left:1.5rem;} .lb-next{right:1.5rem;}
+    .lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,0.2);}
+
+    /* Gallery mosaic */
+    .mosaic{display:grid;grid-template-columns:repeat(12,1fr);gap:8px;}
+    .mosaic-item{overflow:hidden;border-radius:8px;background:var(--bg);cursor:pointer;position:relative;}
+    .mosaic-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease);}
+    .mosaic-item:hover img{transform:scale(1.06);}
+    .mosaic-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,52,96,0.5) 0%,transparent 50%);opacity:0;transition:opacity .3s;}
+    .mosaic-item:hover::after{opacity:1;}
+    .mi-a{grid-column:span 5;height:340px;}
+    .mi-b{grid-column:span 4;height:340px;}
+    .mi-c{grid-column:span 3;height:340px;}
+    .mi-d{grid-column:span 4;height:260px;}
+    .mi-e{grid-column:span 4;height:260px;}
+    .mi-f{grid-column:span 4;height:260px;}
+    .mi-g{grid-column:span 3;height:300px;}
+    .mi-h{grid-column:span 5;height:300px;}
+    .mi-i{grid-column:span 4;height:300px;}
+    @media(max-width:900px){
+      .mosaic{grid-template-columns:repeat(2,1fr);}
+      .mi-a,.mi-b,.mi-c,.mi-d,.mi-e,.mi-f,.mi-g,.mi-h,.mi-i{grid-column:span 1;height:220px;}
+    }
+    @media(max-width:540px){
+      .mosaic{grid-template-columns:1fr;}
+      .mi-a,.mi-b,.mi-c,.mi-d,.mi-e,.mi-f,.mi-g,.mi-h,.mi-i{height:200px;}
+    }
   </style>
 </head>
 <body>
 
-<header class="nav nav--transparent">
+<header class="nav" id="mainNav">
   <div class="container nav__inner">
-    <a href="index.html" class="nav__logo"><span class="nav__logo-name">Prayan Labels</span><span class="nav__logo-tag">Garment Labels Manufacturer</span></a>
+    <a href="index.html" class="nav__logo">
+      <div class="nav__logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/></svg>
+      </div>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">Prayan Labels & Craft</span>
+        <span class="nav__logo-sub">Labels &amp; Accessories</span>
+      </div>
+    </a>
     <nav class="nav__links">
-      <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <a href="contact.html" class="btn btn-gold nav__cta">Get a Quote</a>
+    <a href="contact.html" class="btn btn-primary nav__cta">Get a Quote</a>
     <button class="nav__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav class="nav__mobile">
-  <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-gold" style="margin-top:0.5rem;justify-content:center;">Get a Quote</a>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary" style="margin-top:0.5rem;justify-content:center;">Get a Quote</a>
 </nav>
+
+<section class="page-hero">
+  <div class="page-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1594938298603-c8148c4b4357?auto=format&fit=crop&w=1600&q=80');"></div>
+  <div class="page-hero__overlay"></div>
+  <div class="page-hero__content container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Gallery</span></nav>
+    <h1>Product Gallery</h1>
+    <p>A look at our latkans, labels, hang tags and craft accessories in action — on real garments, from real orders.</p>
+  </div>
+</section>
 
 <main>
 
-<section class="page-hero">
-  <div class="page-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1600&q=80');"></div>
-  <div class="page-hero__overlay"></div>
-  <div class="page-hero__content">
-    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Gallery</span></nav>
-    <h1>Gallery</h1>
-    <p>A look at our work — latkans, labels, hang tags and more, produced for brands across India.</p>
-  </div>
-</section>
-
-<!-- GALLERY -->
+<!-- LATKANS GALLERY -->
 <section class="section">
   <div class="container">
-    <div style="margin-bottom:3rem;">
+    <div class="section__head reveal">
       <span class="eyebrow">Our Work</span>
-      <h2>Product Gallery</h2>
-      <div class="gold-line"></div>
+      <h2>Latkans &amp; Ethnic Accessories</h2>
+      <div class="gold-divider gold-divider--center"></div>
+      <p>Silk thread, zari, metallic charms and beaded latkans crafted for lehengas, kurtis and ethnic fusion wear.</p>
     </div>
-
-    <div class="gallery-grid-luxury" id="galleryGrid">
-      <div class="gallery-item-luxury g1" data-src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80" alt="Ethnic wear with latkans" loading="lazy"/>
+    <div class="mosaic" id="gallery1">
+      <div class="mosaic-item mi-a reveal" data-src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" alt="Latkans on ethnic wear" loading="lazy" />
       </div>
-      <div class="gallery-item-luxury g2" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80" alt="Woven label close-up" loading="lazy"/>
+      <div class="mosaic-item mi-b reveal reveal-d1" data-src="https://images.unsplash.com/photo-1594938298603-c8148c4b4357?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4357?auto=format&fit=crop&w=700&q=80" alt="Ethnic Indian garment detail" loading="lazy" />
       </div>
-      <div class="gallery-item-luxury g3" data-src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=900&q=85">
-        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=700&q=80" alt="Fashion garment with hang tag" loading="lazy"/>
+      <div class="mosaic-item mi-c reveal reveal-d2" data-src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Colourful craft threads" loading="lazy" />
       </div>
-      <div class="gallery-item-luxury g4" data-src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=85">
-        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=700&q=80" alt="Wash care label on garment" loading="lazy"/>
+      <div class="mosaic-item mi-d reveal" data-src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=700&q=80" alt="Colourful Indian garments" loading="lazy" />
       </div>
-      <div class="gallery-item-luxury g5" data-src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=85">
-        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80" alt="Fashion fabric and labels" loading="lazy"/>
+      <div class="mosaic-item mi-e reveal reveal-d1" data-src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80" alt="Latkan detail on garment" loading="lazy" />
       </div>
-      <div class="gallery-item-luxury g6" data-src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=900&q=80" alt="Colourful fabric and textile" loading="lazy"/>
-      </div>
-      <div class="gallery-item-luxury g7" data-src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="Fashion editorial" loading="lazy"/>
+      <div class="mosaic-item mi-f reveal reveal-d2" data-src="https://images.unsplash.com/photo-1594938298603-c8148c4b4357?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4357?auto=format&fit=crop&w=700&q=80" alt="Ethnic wear accessories" loading="lazy" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLIENTS -->
-<section class="section section--cream" id="clients">
+<!-- LABELS & TAGS GALLERY -->
+<section class="section section--bg">
   <div class="container">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <span class="eyebrow" style="justify-content:center;">Trusted By</span>
-      <h2>Brands We've Supplied</h2>
-      <div class="gold-line gold-line--center"></div>
-      <p style="max-width:520px;margin:0 auto;">From boutique designers to large garment exporters — brands that trust Prayan Labels.</p>
+    <div class="section__head reveal">
+      <span class="eyebrow">Labels &amp; Tags</span>
+      <h2>Woven Labels, Hang Tags &amp; Wash Care</h2>
+      <div class="gold-divider gold-divider--center"></div>
+      <p>Precision-made labels and tags — every product photographed from actual production batches.</p>
     </div>
-    <div class="clients-grid">
-      <div class="client-logo">Brand Logo</div>
-      <div class="client-logo">Brand Logo</div>
-      <div class="client-logo">Brand Logo</div>
-      <div class="client-logo">Brand Logo</div>
-      <div class="client-logo">Brand Logo</div>
-      <div class="client-logo">Brand Logo</div>
-      <div class="client-logo">Brand Logo</div>
-      <div class="client-logo">Brand Logo</div>
+    <div class="mosaic" id="gallery2">
+      <div class="mosaic-item mi-c reveal" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Woven brand label" loading="lazy" />
+      </div>
+      <div class="mosaic-item mi-b reveal reveal-d1" data-src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=700&q=80" alt="Hang tag on garment" loading="lazy" />
+      </div>
+      <div class="mosaic-item mi-a reveal reveal-d2" data-src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" alt="Wash care label on clothing" loading="lazy" />
+      </div>
+      <div class="mosaic-item mi-f reveal" data-src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80" alt="Printed fashion labels" loading="lazy" />
+      </div>
+      <div class="mosaic-item mi-d reveal reveal-d1" data-src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=700&q=80" alt="Clothing label detail" loading="lazy" />
+      </div>
+      <div class="mosaic-item mi-e reveal reveal-d2" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80" alt="Woven label on fabric" loading="lazy" />
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- MANUFACTURING -->
 <section class="section">
   <div class="container">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <span class="eyebrow" style="justify-content:center;">What Clients Say</span>
-      <h2>Testimonials</h2>
-      <div class="gold-line gold-line--center"></div>
+    <div class="section__head reveal">
+      <span class="eyebrow">Behind the Scenes</span>
+      <h2>Inside Our Production Unit</h2>
+      <div class="gold-divider gold-divider--center"></div>
+      <p>Everything made under one roof — looms, printers, winding machines and a final manual QC before every dispatch.</p>
     </div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <blockquote>Prayan Labels has been our go-to supplier for latkans for three seasons now. Consistent quality, never missed a delivery deadline.</blockquote>
-        <div class="testimonial-cite"><strong>— Client Name</strong>Garment Brand, City</div>
+    <div class="mosaic" id="gallery3">
+      <div class="mosaic-item mi-g reveal" data-src="https://images.unsplash.com/photo-1586495777744-4e6232bf2177?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1586495777744-4e6232bf2177?auto=format&fit=crop&w=600&q=80" alt="Textile craft production" loading="lazy" />
       </div>
-      <div class="testimonial-card">
-        <blockquote>The wash care labels are excellent — clear print, doesn't fade even after 30+ washes. Our export buyer approved them on first submission.</blockquote>
-        <div class="testimonial-cite"><strong>— Client Name</strong>Garment Exporter, City</div>
+      <div class="mosaic-item mi-h reveal reveal-d1" data-src="https://images.unsplash.com/photo-1604176354204-9268737fd5b7?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1604176354204-9268737fd5b7?auto=format&fit=crop&w=900&q=80" alt="Label manufacturing" loading="lazy" />
       </div>
-      <div class="testimonial-card">
-        <blockquote>Responsive team, fast sampling and no quality surprises in bulk. That's rare in this industry.</blockquote>
-        <div class="testimonial-cite"><strong>— Client Name</strong>Fashion Label, City</div>
+      <div class="mosaic-item mi-i reveal reveal-d2" data-src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80" alt="Craft thread detail" loading="lazy" />
       </div>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-banner">
-  <div class="cta-banner__bg" style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1600&q=80');"></div>
-  <div class="container cta-banner__content">
-    <h2>Like What You See?</h2>
-    <p>Request a sample of any product — dispatched within 48 hours.</p>
+  <div class="cta-banner__content container">
+    <span class="eyebrow" style="justify-content:center;">Like What You See?</span>
+    <h2 style="color:#fff;">Let's Create Something for Your Brand</h2>
+    <p>Share your requirement and get a custom sample within 48 hours.</p>
     <div class="cta-actions">
-      <a href="contact.html" class="btn btn-outline-white">Request a Sample</a>
-      <a href="https://wa.me/919780333055" target="_blank" rel="noopener" class="btn btn-gold">WhatsApp Us</a>
+      <a href="contact.html" class="btn btn-primary btn-lg">Request a Sample</a>
+      <a href="https://wa.me/919780333055?text=Hi%2C%20I%20saw%20your%20gallery%20and%20would%20like%20to%20enquire." target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.525 5.84L.057 23.486a.5.5 0 00.614.614l5.644-1.468A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.803-.537-5.38-1.47l-.386-.232-3.35.871.871-3.35-.232-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Chat on WhatsApp
+      </a>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox__close" id="lbClose">&times;</button>
-  <img id="lbImg" src="" alt=""/>
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">&#8592;</button>
+  <img src="" alt="Gallery image" id="lbImg" />
+  <button class="lb-next" id="lbNext" aria-label="Next">&#8594;</button>
 </div>
 
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
-      <div><div class="footer__brand-name">Prayan Labels</div><div class="footer__brand-tag">Garment Labels Manufacturer</div><p class="footer__desc">Premium latkans, woven labels, wash care labels and custom tags for India's garment industry.</p></div>
-      <div class="footer__col"><h5>Products</h5><ul><li><a href="products.html#latkans">Latkans</a></li><li><a href="products.html#woven">Woven Labels</a></li><li><a href="products.html#printed">Printed Tags</a></li><li><a href="products.html#washcare">Wash Care Labels</a></li><li><a href="products.html#hang">Hang Tags</a></li></ul></div>
-      <div class="footer__col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer__col"><h5>Contact</h5><ul><li><a href="tel:+919780333055">+91 97803 33055</a></li><li><a href="https://wa.me/919780333055" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="contact.html">Send Inquiry</a></li></ul></div>
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <div class="footer__logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/></svg></div>
+          <div class="footer__logo-text"><span class="name">Prayan Labels &amp; Craft</span><span class="sub">Labels &amp; Accessories</span></div>
+        </div>
+        <p class="footer__desc">Manufacturer of premium latkans, woven labels, hang tags, wash care labels and craft accessories for brands across India.</p>
+        <div class="footer__contact">
+          <a href="tel:+919780333055"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+91 97803 33055</a>
+          <a href="https://wa.me/919780333055" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.297.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.525 5.84L.057 23.486a.5.5 0 00.614.614l5.644-1.468A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.803-.537-5.38-1.47l-.386-.232-3.35.871.871-3.35-.232-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer__col"><h5>Products</h5><ul><li><a href="products.html#latkans">Latkans</a></li><li><a href="products.html#woven">Woven Labels</a></li><li><a href="products.html#hangtags">Hang Tags</a></li><li><a href="products.html#washcare">Wash Care Labels</a></li><li><a href="products.html#printed">Printed Tags</a></li><li><a href="products.html#craft">Craft Accessories</a></li></ul></div>
+      <div class="footer__col"><h5>Company</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h5>Quick Contact</h5><ul><li><a href="tel:+919780333055">+91 97803 33055</a></li><li><a href="https://wa.me/919780333055" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@prayanlabels.com">Email Us</a></li><li><a href="contact.html">Send Inquiry</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><span>© 2025 Prayan Labels. All rights reserved.</span><span>Made in India 🇮🇳</span></div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Prayan Labels &amp; Craft. All rights reserved.</span>
+      <span>Made with ❤️ in India 🇮🇳</span>
+    </div>
   </div>
 </footer>
 
-<a href="https://wa.me/919780333055?text=Hello%2C%20I%27m%20interested%20in%20your%20labels%20and%20latkans." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/919780333055?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20labels%20and%20latkans." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.525 5.84L.057 23.486a.5.5 0 00.614.614l5.644-1.468A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.803-.537-5.38-1.47l-.386-.232-3.35.871.871-3.35-.232-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
 <script src="js/main.js"></script>
-<script>
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lbImg');
-  document.getElementById('lbClose').onclick = () => lb.classList.remove('open');
-  lb.addEventListener('click', e => { if(e.target===lb) lb.classList.remove('open'); });
-  document.addEventListener('keydown', e => { if(e.key==='Escape') lb.classList.remove('open'); });
-  document.querySelectorAll('.gallery-item-luxury').forEach(el => {
-    el.style.cursor = 'zoom-in';
-    el.addEventListener('click', () => { lbImg.src = el.dataset.src; lb.classList.add('open'); });
-  });
-</script>
 </body>
 </html>

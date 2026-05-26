@@ -1,14 +1,9 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
+  // Cloudflare Workers static-asset config for Prayan Labels & Craft
+  // https://developers.cloudflare.com/workers/wrangler/configuration/
   "name": "prayanlabels",
-  "compatibility_date": "2026-05-25",
-  "observability": {
-    "enabled": true
-  },
-  "assets": {
-    "directory": "."
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+  "compatibility_date": "2026-05-26",
+  "observability": { "enabled": true },
+  "assets": { "directory": "." },
+  "compatibility_flags": ["nodejs_compat"]
 }

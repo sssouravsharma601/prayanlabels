@@ -3,128 +3,249 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Prayan Labels products — latkans, woven labels, printed tags, wash care labels and hang tags." />
-  <title>Products | Prayan Labels</title>
+  <meta name="description" content="Prayan Labels & Craft product catalogue — latkans, woven labels, hang tags, wash care labels, printed tags and craft accessories. Custom orders, PAN India delivery." />
+  <title>Products | Prayan Labels & Craft</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080808'/><text y='23' x='6' font-size='18' fill='%23c9a84c' font-family='Georgia'>P</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f3460'/><text y='23' x='7' font-size='18' fill='%23c9a84c' font-family='Georgia' font-weight='bold'>P</text></svg>" />
 </head>
 <body>
 
-<header class="nav nav--transparent">
+<header class="nav" id="mainNav">
   <div class="container nav__inner">
-    <a href="index.html" class="nav__logo"><span class="nav__logo-name">Prayan Labels</span><span class="nav__logo-tag">Garment Labels Manufacturer</span></a>
+    <a href="index.html" class="nav__logo">
+      <div class="nav__logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/></svg>
+      </div>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">Prayan Labels & Craft</span>
+        <span class="nav__logo-sub">Labels &amp; Accessories</span>
+      </div>
+    </a>
     <nav class="nav__links">
-      <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <a href="contact.html" class="btn btn-gold nav__cta">Get a Quote</a>
+    <a href="contact.html" class="btn btn-primary nav__cta">Get a Quote</a>
     <button class="nav__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav class="nav__mobile">
-  <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-gold" style="margin-top:0.5rem;justify-content:center;">Get a Quote</a>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary" style="margin-top:0.5rem;justify-content:center;">Get a Quote</a>
 </nav>
+
+<section class="page-hero">
+  <div class="page-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1600&q=80');"></div>
+  <div class="page-hero__overlay"></div>
+  <div class="page-hero__content container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Products</span></nav>
+    <h1>Our Product Catalogue</h1>
+    <p>Latkans, labels and craft accessories — designed to your specs, made in-house, delivered on time.</p>
+  </div>
+</section>
 
 <main>
 
-<section class="page-hero">
-  <div class="page-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1600&q=80');"></div>
-  <div class="page-hero__overlay"></div>
-  <div class="page-hero__content">
-    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Products</span></nav>
-    <h1>Our Products</h1>
-    <p>A complete range of garment labeling solutions — crafted with precision, delivered with consistency.</p>
+<!-- QUICK NAV -->
+<div style="background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:62px;z-index:10;">
+  <div class="container" style="display:flex;gap:0.5rem;overflow-x:auto;padding:0.85rem 0;-webkit-overflow-scrolling:touch;scrollbar-width:none;">
+    <a href="#latkans"  class="qnav-pill active">Latkans</a>
+    <a href="#woven"    class="qnav-pill">Woven Labels</a>
+    <a href="#hangtags" class="qnav-pill">Hang Tags</a>
+    <a href="#washcare" class="qnav-pill">Wash Care Labels</a>
+    <a href="#printed"  class="qnav-pill">Printed Tags</a>
+    <a href="#craft"    class="qnav-pill">Craft Accessories</a>
   </div>
-</section>
+</div>
+<style>
+  .qnav-pill{white-space:nowrap;padding:0.45rem 1.1rem;border-radius:20px;font-size:0.78rem;font-weight:600;color:var(--text-mid);background:var(--bg);text-decoration:none;flex-shrink:0;border:1px solid var(--border);transition:all .2s}
+  .qnav-pill:hover,.qnav-pill.active{color:var(--navy);background:var(--navy-light);border-color:var(--navy-light)}
+</style>
 
 <!-- LATKANS -->
 <section class="section" id="latkans">
   <div class="container">
-    <div style="margin-bottom:3rem;">
-      <span class="eyebrow">Signature Product</span>
-      <h2>Latkans</h2>
-      <div class="gold-line"></div>
-      <p style="max-width:600px;">The defining embellishment of ethnic Indian wear. Custom shapes, premium threads and brand imprinting — perfect for sarees, kurtis, lehengas and dupattas.</p>
-    </div>
-    <div class="products-full-grid">
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <!-- Replace with your own latkan photo: <img src="images/products/thread-latkans.jpg"> -->
-          <img src="https://images.unsplash.com/photo-1549439602-43ebca2327af?auto=format&fit=crop&w=700&q=80" alt="Colourful thread latkans for ethnic wear" loading="lazy"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80'"/>
+    <div class="about-hero-grid">
+      <div>
+        <span class="eyebrow">Signature Product</span>
+        <h2>Latkans</h2>
+        <div class="gold-divider"></div>
+        <p>Latkans are the soul of Indian ethnic wear. Our handcrafted latkans add a finishing flourish to lehengas, kurtis, sarees and fusion wear — available in hundreds of combinations of thread, charm, material and colour.</p>
+        <ul class="value-list" style="margin-top:1.5rem;">
+          <li>Silk thread, zari, cotton and metallic options</li>
+          <li>Metal, acrylic and wooden charm tops</li>
+          <li>Bead, pearl and tassel add-ons</li>
+          <li>Custom branding on charm (logo engraving)</li>
+          <li>Matching cord loops and strings included</li>
+        </ul>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+          <div style="background:var(--bg);border-radius:8px;padding:1rem 1.5rem;text-align:center;min-width:90px;">
+            <div style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--navy);">500+</div>
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.2rem;">Min. Order</div>
+          </div>
+          <div style="background:var(--bg);border-radius:8px;padding:1rem 1.5rem;text-align:center;min-width:90px;">
+            <div style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--navy);">48h</div>
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.2rem;">Sample Time</div>
+          </div>
+          <div style="background:var(--bg);border-radius:8px;padding:1rem 1.5rem;text-align:center;min-width:90px;">
+            <div style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--navy);">100+</div>
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.2rem;">Colours</div>
+          </div>
         </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Ethnic Wear</div>
-          <h3 class="product-full-card__name">Thread Latkans</h3>
-          <p class="product-full-card__desc">Multi-strand silk and polyester thread latkans with custom colours and logo charms. Available in all colour combinations to match your garment palette.</p>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:2rem;">Get a Latkan Quote</a>
+      </div>
+      <div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80" alt="Latkans on ethnic wear" loading="lazy" style="border-radius:10px;width:100%;aspect-ratio:3/4;object-fit:cover;grid-row:span 2;" />
+          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4357?auto=format&fit=crop&w=400&q=80" alt="Colourful ethnic garment" loading="lazy" style="border-radius:10px;width:100%;aspect-ratio:1;object-fit:cover;" />
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80" alt="Colourful craft threads" loading="lazy" style="border-radius:10px;width:100%;aspect-ratio:1;object-fit:cover;" />
         </div>
-      </article>
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1583391099995-9a8bac2d7f2a?auto=format&fit=crop&w=700&q=80" alt="Zari gold latkans bridal ethnic wear" loading="lazy"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=700&q=80'"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Premium</div>
-          <h3 class="product-full-card__name">Zari Latkans</h3>
-          <p class="product-full-card__desc">Gold and silver zari thread latkans for bridal and festive ethnic collections. Rich, lustrous finish — a mark of premium craftsmanship.</p>
-        </div>
-      </article>
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1585914641050-fa5cde8c07dd?auto=format&fit=crop&w=700&q=80" alt="Logo charm latkans custom brand" loading="lazy"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80'"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Custom</div>
-          <h3 class="product-full-card__name">Logo Charm Latkans</h3>
-          <p class="product-full-card__desc">Metal or acrylic charm with your brand logo, attached to thread or cord of your choice. MOQ from 500 pcs.</p>
-        </div>
-      </article>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- WOVEN -->
-<section class="section section--cream" id="woven">
+<!-- WOVEN LABELS -->
+<section class="section section--bg" id="woven">
   <div class="container">
-    <div style="margin-bottom:3rem;">
-      <span class="eyebrow">Brand Identity</span>
+    <div class="section__head reveal">
+      <span class="eyebrow">Premium Fabric Labels</span>
       <h2>Woven Labels</h2>
-      <div class="gold-line"></div>
-      <p style="max-width:600px;">High-definition woven labels that carry your brand through every wash. Damask, satin, taffeta and canvas weaves available.</p>
+      <div class="gold-divider gold-divider--center"></div>
+      <p>The most premium way to carry your brand inside a garment. Sharp logo reproduction, soft feel and wash-proof — in all weave types.</p>
     </div>
     <div class="products-full-grid">
-      <article class="product-full-card">
+      <div class="product-full-card reveal">
         <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80" alt="Damask woven brand label close-up" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80" alt="Damask woven brand label" loading="lazy" />
         </div>
         <div class="product-full-card__body">
-          <div class="product-full-card__tag">Most Popular</div>
-          <h3 class="product-full-card__name">Damask Woven Labels</h3>
-          <p class="product-full-card__desc">Ultra-fine weave for small text and intricate logo detail. Incredibly soft against skin — ideal for neckbands and inner care labels.</p>
+          <span class="product-full-card__tag">Damask Weave</span>
+          <div class="product-full-card__name">Damask Woven Labels</div>
+          <p class="product-full-card__desc">Finest thread count with photographic detail. Ideal for premium brands needing sharp logo and fine text reproduction.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">Ultra-fine detail</span>
+            <span class="spec-chip">Soft finish</span>
+            <span class="spec-chip">Washproof</span>
+          </div>
         </div>
-      </article>
-      <article class="product-full-card">
+      </div>
+      <div class="product-full-card reveal reveal-d1">
         <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=700&q=80" alt="Satin woven label luxury garment" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=700&q=80" alt="Satin woven label" loading="lazy" />
         </div>
         <div class="product-full-card__body">
-          <div class="product-full-card__tag">Luxury</div>
-          <h3 class="product-full-card__name">Satin Woven Labels</h3>
-          <p class="product-full-card__desc">Glossy satin weave with a premium look and feel. The label of choice for luxury and designer apparel.</p>
+          <span class="product-full-card__tag">Satin / Sateen</span>
+          <div class="product-full-card__name">Satin Woven Labels</div>
+          <p class="product-full-card__desc">Glossy front surface with a silky feel. Popular for lingerie, western wear and premium ethnic brands.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">Glossy finish</span>
+            <span class="spec-chip">Silky texture</span>
+            <span class="spec-chip">Cut &amp; fold types</span>
+          </div>
         </div>
-      </article>
-      <article class="product-full-card">
+      </div>
+      <div class="product-full-card reveal reveal-d2">
         <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=700&q=80" alt="Taffeta woven label casual garment" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80" alt="Taffeta woven label" loading="lazy" />
         </div>
         <div class="product-full-card__body">
-          <div class="product-full-card__tag">Everyday</div>
-          <h3 class="product-full-card__name">Taffeta Woven Labels</h3>
-          <p class="product-full-card__desc">Economical and durable — perfect for casual wear, sportswear and high-volume garment production.</p>
+          <span class="product-full-card__tag">Taffeta</span>
+          <div class="product-full-card__name">Taffeta Woven Labels</div>
+          <p class="product-full-card__desc">Cost-effective, durable and crisp. The most widely used woven label for everyday clothing and workwear.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">Budget-friendly</span>
+            <span class="spec-chip">High durability</span>
+            <span class="spec-chip">Wide colour range</span>
+          </div>
         </div>
-      </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HANG TAGS -->
+<section class="section" id="hangtags">
+  <div class="container">
+    <div class="about-hero-grid">
+      <div class="reveal">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=800&q=80" alt="Hang tag on fashion garment" loading="lazy" style="border-radius:12px;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-lg);" />
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Retail Ready</span>
+        <h2>Hang Tags</h2>
+        <div class="gold-divider"></div>
+        <p>Your hang tag is often the first thing a customer picks up on a retail rack. We make them look as premium as the garment they're attached to — with special finishes that stand out.</p>
+        <ul class="value-list" style="margin-top:1.5rem;">
+          <li>Offset &amp; digital printing, up to 6 colours</li>
+          <li>Foil stamping (gold, silver, holographic)</li>
+          <li>Embossing &amp; debossing options</li>
+          <li>Die-cut custom shapes</li>
+          <li>Paper: kraft, ivory, art, duplex board</li>
+          <li>String, cord and safety pin attachment</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:2rem;">Order Hang Tags</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WASH CARE -->
+<section class="section section--bg" id="washcare">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Compliance Labels</span>
+      <h2>Wash Care Labels</h2>
+      <div class="gold-divider gold-divider--center"></div>
+      <p>Mandatory for domestic and export markets. Our wash care labels are clearly printed with ISO-standard symbols and fabric composition details.</p>
+    </div>
+    <div class="products-full-grid">
+      <div class="product-full-card reveal">
+        <div class="product-full-card__img">
+          <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=700&q=80" alt="Wash care label on clothing" loading="lazy" />
+        </div>
+        <div class="product-full-card__body">
+          <span class="product-full-card__tag">Printed Satin</span>
+          <div class="product-full-card__name">Satin Ribbon Care Labels</div>
+          <p class="product-full-card__desc">Soft, smooth satin ribbon with clear care symbol printing. The industry standard for Indian ethnic and western wear.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">Soft on skin</span><span class="spec-chip">Heat-resistant ink</span><span class="spec-chip">Custom width</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-full-card reveal reveal-d1">
+        <div class="product-full-card__img">
+          <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=700&q=80" alt="Woven wash care label" loading="lazy" />
+        </div>
+        <div class="product-full-card__body">
+          <span class="product-full-card__tag">Woven</span>
+          <div class="product-full-card__name">Woven Care Labels</div>
+          <p class="product-full-card__desc">Brand name + care instructions in one woven label — a premium two-in-one solution for higher-end garments.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">Brand + care combo</span><span class="spec-chip">Fade-proof</span><span class="spec-chip">Export ready</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-full-card reveal reveal-d2">
+        <div class="product-full-card__img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80" alt="Taffeta care label" loading="lazy" />
+        </div>
+        <div class="product-full-card__body">
+          <span class="product-full-card__tag">Taffeta</span>
+          <div class="product-full-card__name">Taffeta Care Labels</div>
+          <p class="product-full-card__desc">Economical taffeta labels for budget garment lines. Clear, durable and IS 1848 compliant.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">IS 1848 compliant</span><span class="spec-chip">Hindi + English</span><span class="spec-chip">Low MOQ</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -132,279 +253,92 @@
 <!-- PRINTED TAGS -->
 <section class="section" id="printed">
   <div class="container">
-    <div style="margin-bottom:3rem;">
-      <span class="eyebrow">Print Solutions</span>
-      <h2>Printed Tags &amp; Labels</h2>
-      <div class="gold-line"></div>
-      <p style="max-width:600px;">Full-colour digital and offset printed labels — custom sizes, shapes and finishes on any substrate.</p>
-    </div>
-    <div class="products-full-grid">
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=700&q=80" alt="Custom printed price tag on garment" loading="lazy"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Retail</div>
-          <h3 class="product-full-card__name">Price Tags</h3>
-          <p class="product-full-card__desc">Custom printed price tags with barcode, MRP and product detail — paper or synthetic, single or double sided.</p>
-        </div>
-      </article>
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80" alt="Brand main label on garment" loading="lazy"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Branding</div>
-          <h3 class="product-full-card__name">Brand Main Labels</h3>
-          <p class="product-full-card__desc">Printed neck labels and main brand labels with logo, size and country-of-origin. Domestic and export ready.</p>
-        </div>
-      </article>
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1604176354204-9268737fd5b7?auto=format&fit=crop&w=700&q=80" alt="Barcode sticker labels roll" loading="lazy"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Export</div>
-          <h3 class="product-full-card__name">Barcode Stickers</h3>
-          <p class="product-full-card__desc">EAN-13, UPC and QR code labels on rolls. Thermal and digital print options in any quantity.</p>
-        </div>
-      </article>
+    <div class="about-hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Full Colour Branding</span>
+        <h2>Printed Tags &amp; Labels</h2>
+        <div class="gold-divider"></div>
+        <p>For brands that need photographic-quality printing on their tags and labels — offset and digital printing on any substrate you need.</p>
+        <ul class="value-list" style="margin-top:1.5rem;">
+          <li>Brand hang tags with full-colour print</li>
+          <li>Barcode &amp; QR code labels (thermal / inkjet)</li>
+          <li>Price stickers on rolls or sheets</li>
+          <li>Sticker labels for packaging &amp; boxes</li>
+          <li>Finishes: matte, gloss, soft-touch laminate</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:2rem;">Get Printing Quote</a>
+      </div>
+      <div class="reveal">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80" alt="Printed fashion labels and tags" loading="lazy" style="border-radius:12px;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-lg);" />
+      </div>
     </div>
   </div>
 </section>
 
-<!-- WASH CARE -->
-<section class="section section--cream" id="washcare">
+<!-- CRAFT ACCESSORIES -->
+<section class="section section--bg" id="craft">
   <div class="container">
-    <div style="margin-bottom:3rem;">
-      <span class="eyebrow">Compliance</span>
-      <h2>Wash Care Labels</h2>
-      <div class="gold-line"></div>
-      <p style="max-width:600px;">Clear, durable care and composition labels with ISO-standard GINETEX symbols. Essential for domestic retail and export.</p>
+    <div class="section__head reveal">
+      <span class="eyebrow">Finishing Accessories</span>
+      <h2>Craft Accessories</h2>
+      <div class="gold-divider gold-divider--center"></div>
+      <p>Beyond labels — the small accessories that make garments and gifts feel complete and well-finished.</p>
     </div>
     <div class="products-full-grid">
-      <article class="product-full-card">
+      <div class="product-full-card reveal">
         <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=700&q=80" alt="Woven wash care label on clothing" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80" alt="Craft threads and accessories" loading="lazy" />
         </div>
         <div class="product-full-card__body">
-          <div class="product-full-card__tag">Woven</div>
-          <h3 class="product-full-card__name">Woven Care Labels</h3>
-          <p class="product-full-card__desc">Soft, durable woven labels with care symbols — fade-resistant ink, tested across 30+ wash cycles.</p>
-        </div>
-      </article>
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=700&q=80" alt="Printed wash care instructions label" loading="lazy"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80'"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Printed</div>
-          <h3 class="product-full-card__name">Printed Care Labels</h3>
-          <p class="product-full-card__desc">Full-colour printed care labels on satin or polyester. Cost-effective for large volume runs.</p>
-        </div>
-      </article>
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="Multi-language export care compliance label" loading="lazy"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Export Ready</div>
-          <h3 class="product-full-card__name">Multi-language Care Labels</h3>
-          <p class="product-full-card__desc">Care and composition labels in multiple languages for EU, US and Middle East export compliance.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- HANG TAGS -->
-<section class="section" id="hang">
-  <div class="container">
-    <div style="margin-bottom:3rem;">
-      <span class="eyebrow">Retail Packaging</span>
-      <h2>Hang Tags</h2>
-      <div class="gold-line"></div>
-      <p style="max-width:600px;">The first thing a customer touches. Printed on premium cardstock with finishes that make your product stand out at retail.</p>
-    </div>
-    <div class="products-full-grid">
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=700&q=80" alt="Paper hang tag on fashion garment" loading="lazy"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Standard</div>
-          <h3 class="product-full-card__name">Paper Hang Tags</h3>
-          <p class="product-full-card__desc">300–400 GSM cardstock with gloss, matte or soft-touch lamination. Single or double-sided printing.</p>
-        </div>
-      </article>
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80" alt="Specialty foil embossed luxury hang tag" loading="lazy"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Premium</div>
-          <h3 class="product-full-card__name">Specialty Finish Tags</h3>
-          <p class="product-full-card__desc">Foil stamping, embossing, spot UV and die-cut shapes for a luxury unboxing experience.</p>
-        </div>
-      </article>
-      <article class="product-full-card">
-        <div class="product-full-card__img">
-          <img src="https://images.unsplash.com/photo-1535992165812-68d1861aa71e?auto=format&fit=crop&w=700&q=80" alt="Kraft eco recycled hang tag sustainable fashion" loading="lazy"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80'"/>
-        </div>
-        <div class="product-full-card__body">
-          <div class="product-full-card__tag">Eco</div>
-          <h3 class="product-full-card__name">Kraft / Recycled Tags</h3>
-          <p class="product-full-card__desc">Natural kraft and recycled board hang tags for sustainable fashion brands.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== HOW IT'S MADE — GIF SECTION ===== -->
-<section class="section section--dark" id="manufacturing">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:3.5rem;">
-      <span class="eyebrow" style="justify-content:center;">Inside Our Factory</span>
-      <h2>See It Being Made</h2>
-      <div class="gold-line gold-line--center"></div>
-      <p style="max-width:560px;margin:0 auto;">
-        From raw thread to finished latkan — watch the machines that power Prayan Labels.
-        Every label goes through the same process, every time.
-      </p>
-    </div>
-
-    <div class="gif-grid">
-
-      <!-- GIF 1: Latkan / Thread Making Machine -->
-      <div class="gif-card">
-        <div class="gif-card__media">
-          <!--
-            TO ADD YOUR GIF:
-            1. Film your latkan-making machine (5–10 seconds)
-            2. Convert to GIF at ezgif.com (keep under 5 MB)
-            3. Save to images/ folder as "latkan-machine.gif"
-            4. Replace the div below with:
-               <img src="images/latkan-machine.gif" alt="Latkan thread winding machine" />
-          -->
-          <div class="gif-placeholder">
-            <div class="gif-placeholder__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="5" r="3"/><path d="M12 8v13M8 14l4 4 4-4"/>
-              </svg>
-            </div>
-            <div class="gif-placeholder__label">Latkan Machine<br/><small style="opacity:.5;font-size:0.62rem;">Add your GIF here</small></div>
+          <span class="product-full-card__tag">Finishing</span>
+          <div class="product-full-card__name">Cord Strings &amp; Loops</div>
+          <p class="product-full-card__desc">Thread loops, button holes and cord strings for attaching hang tags and accessories. Custom colours and thickness available.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">Cotton &amp; nylon</span><span class="spec-chip">Custom colours</span><span class="spec-chip">Bulk rolls</span>
           </div>
-          <span class="gif-badge">GIF</span>
-        </div>
-        <div class="gif-card__caption">
-          <h4>Thread Winding</h4>
-          <p>Automatic latkan thread winding and cutting at high speed.</p>
         </div>
       </div>
-
-      <!-- GIF 2: Woven Label Loom -->
-      <div class="gif-card">
-        <div class="gif-card__media">
-          <!--
-            Replace with:
-            <img src="images/weaving-loom.gif" alt="Woven label loom machine" />
-            OR use a Giphy embed:
-            <iframe src="https://giphy.com/embed/YOUR_GIF_ID" frameborder="0" style="width:100%;height:100%;position:absolute;inset:0" allowfullscreen></iframe>
-          -->
-          <div class="gif-placeholder">
-            <div class="gif-placeholder__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="1"/>
-                <path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
-              </svg>
-            </div>
-            <div class="gif-placeholder__label">Weaving Loom<br/><small style="opacity:.5;font-size:0.62rem;">Add your GIF here</small></div>
+      <div class="product-full-card reveal reveal-d1">
+        <div class="product-full-card__img">
+          <img src="https://images.unsplash.com/photo-1604176354204-9268737fd5b7?auto=format&fit=crop&w=700&q=80" alt="Tassels and pom-poms" loading="lazy" />
+        </div>
+        <div class="product-full-card__body">
+          <span class="product-full-card__tag">Craft</span>
+          <div class="product-full-card__name">Tassels &amp; Pom-Poms</div>
+          <p class="product-full-card__desc">Decorative tassels and pom-poms for fashion accessories, home décor, bags and gifting. Multi-colour combos on request.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">Silk &amp; cotton</span><span class="spec-chip">Custom sizes</span><span class="spec-chip">Multi-colour</span>
           </div>
-          <span class="gif-badge">GIF</span>
-        </div>
-        <div class="gif-card__caption">
-          <h4>Woven Label Loom</h4>
-          <p>Jacquard loom weaving brand labels at precision thread count.</p>
         </div>
       </div>
-
-      <!-- GIF 3: Label Printing Machine -->
-      <div class="gif-card">
-        <div class="gif-card__media">
-          <!--
-            Replace with:
-            <img src="images/printing-machine.gif" alt="Label printing machine" />
-          -->
-          <div class="gif-placeholder">
-            <div class="gif-placeholder__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
-                <rect x="6" y="14" width="12" height="8"/>
-              </svg>
-            </div>
-            <div class="gif-placeholder__label">Print Machine<br/><small style="opacity:.5;font-size:0.62rem;">Add your GIF here</small></div>
+      <div class="product-full-card reveal reveal-d2">
+        <div class="product-full-card__img">
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=700&q=80" alt="Price pins and tag gun supplies" loading="lazy" />
+        </div>
+        <div class="product-full-card__body">
+          <span class="product-full-card__tag">Packaging</span>
+          <div class="product-full-card__name">Price Pins &amp; Tag Guns</div>
+          <p class="product-full-card__desc">Plastic price pins (barbs) and tag gun consumables for attaching hang tags. Standard and fine gauge options in bulk packs.</p>
+          <div class="product-full-card__specs">
+            <span class="spec-chip">Standard gauge</span><span class="spec-chip">Fine gauge</span><span class="spec-chip">Bulk packs</span>
           </div>
-          <span class="gif-badge">GIF</span>
-        </div>
-        <div class="gif-card__caption">
-          <h4>Label Printing</h4>
-          <p>High-speed digital printing of wash care and price labels on rolls.</p>
         </div>
       </div>
-
-      <!-- GIF 4: Quality Check / Cutting -->
-      <div class="gif-card">
-        <div class="gif-card__media">
-          <!--
-            Replace with:
-            <img src="images/quality-check.gif" alt="Label quality check and cutting" />
-          -->
-          <div class="gif-placeholder">
-            <div class="gif-placeholder__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-            </div>
-            <div class="gif-placeholder__label">Quality Check<br/><small style="opacity:.5;font-size:0.62rem;">Add your GIF here</small></div>
-          </div>
-          <span class="gif-badge">GIF</span>
-        </div>
-        <div class="gif-card__caption">
-          <h4>Cutting &amp; QC</h4>
-          <p>Precision cutting and final quality inspection before packing.</p>
-        </div>
-      </div>
-
-    </div><!-- /gif-grid -->
-
-    <!-- Instructions bar -->
-    <div class="gif-instructions">
-      <div class="gif-instructions__icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
-        </svg>
-      </div>
-      <p>
-        To add real manufacturing GIFs: film your machine → convert at
-        <code>ezgif.com</code> → save to <code>images/</code> folder →
-        replace the placeholder div with <code>&lt;img src="images/your-machine.gif"&gt;</code>
-      </p>
     </div>
-
   </div>
 </section>
 
 <section class="cta-banner">
-  <div class="cta-banner__bg" style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1600&q=80');"></div>
-  <div class="container cta-banner__content">
-    <h2>Need Something Custom?</h2>
-    <p>Tell us your requirement — we'll design and manufacture it for you.</p>
+  <div class="cta-banner__content container">
+    <span class="eyebrow" style="justify-content:center;">Custom Orders Welcome</span>
+    <h2 style="color:#fff;">Don't See Exactly What You Need?</h2>
+    <p>We manufacture to spec. Share your requirement and we'll make it happen.</p>
     <div class="cta-actions">
-      <a href="contact.html" class="btn btn-outline-white">Send Requirements</a>
-      <a href="https://wa.me/919780333055" target="_blank" rel="noopener" class="btn btn-gold">WhatsApp Us</a>
+      <a href="contact.html" class="btn btn-primary btn-lg">Send a Requirement</a>
+      <a href="https://wa.me/919780333055?text=Hi%2C%20I%20need%20a%20custom%20label%20or%20latkan." target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.525 5.84L.057 23.486a.5.5 0 00.614.614l5.644-1.468A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.803-.537-5.38-1.47l-.386-.232-3.35.871.871-3.35-.232-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp Us
+      </a>
     </div>
   </div>
 </section>
@@ -414,16 +348,29 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
-      <div><div class="footer__brand-name">Prayan Labels</div><div class="footer__brand-tag">Garment Labels Manufacturer</div><p class="footer__desc">Premium latkans, woven labels, wash care labels and custom tags for India's garment industry.</p></div>
-      <div class="footer__col"><h5>Products</h5><ul><li><a href="#latkans">Latkans</a></li><li><a href="#woven">Woven Labels</a></li><li><a href="#printed">Printed Tags</a></li><li><a href="#washcare">Wash Care Labels</a></li><li><a href="#hang">Hang Tags</a></li></ul></div>
-      <div class="footer__col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer__col"><h5>Contact</h5><ul><li><a href="tel:+919780333055">+91 97803 33055</a></li><li><a href="https://wa.me/919780333055" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="contact.html">Send Inquiry</a></li></ul></div>
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <div class="footer__logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/></svg></div>
+          <div class="footer__logo-text"><span class="name">Prayan Labels &amp; Craft</span><span class="sub">Labels &amp; Accessories</span></div>
+        </div>
+        <p class="footer__desc">Manufacturer of premium latkans, woven labels, hang tags, wash care labels and craft accessories for brands across India.</p>
+        <div class="footer__contact">
+          <a href="tel:+919780333055"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+91 97803 33055</a>
+          <a href="https://wa.me/919780333055" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.297.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.525 5.84L.057 23.486a.5.5 0 00.614.614l5.644-1.468A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.803-.537-5.38-1.47l-.386-.232-3.35.871.871-3.35-.232-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer__col"><h5>Products</h5><ul><li><a href="#latkans">Latkans</a></li><li><a href="#woven">Woven Labels</a></li><li><a href="#hangtags">Hang Tags</a></li><li><a href="#washcare">Wash Care Labels</a></li><li><a href="#printed">Printed Tags</a></li><li><a href="#craft">Craft Accessories</a></li></ul></div>
+      <div class="footer__col"><h5>Company</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h5>Quick Contact</h5><ul><li><a href="tel:+919780333055">+91 97803 33055</a></li><li><a href="https://wa.me/919780333055" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@prayanlabels.com">Email Us</a></li><li><a href="contact.html">Send Inquiry</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><span>© 2025 Prayan Labels. All rights reserved.</span><span>Made in India 🇮🇳</span></div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Prayan Labels &amp; Craft. All rights reserved.</span>
+      <span>Made with ❤️ in India 🇮🇳</span>
+    </div>
   </div>
 </footer>
 
-<a href="https://wa.me/919780333055?text=Hello%2C%20I%27m%20interested%20in%20your%20labels%20and%20latkans." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/919780333055?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20labels%20and%20latkans." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.525 5.84L.057 23.486a.5.5 0 00.614.614l5.644-1.468A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.803-.537-5.38-1.47l-.386-.232-3.35.871.871-3.35-.232-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
 <script src="js/main.js"></script>
