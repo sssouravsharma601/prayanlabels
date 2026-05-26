@@ -1,0 +1,16 @@
+{
+  "name": "Prayan Labels & Craft",
+  "short_name": "Prayan Labels",
+  "description": "Manufacturer of latkans, woven labels, hang tags and craft accessories, Ludhiana",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0f3460",
+  "theme_color": "#0f3460",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f3460'/><text y='23' x='7' font-size='18' fill='%23c9a84c' font-family='Georgia' font-weight='bold'>P</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
