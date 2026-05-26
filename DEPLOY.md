@@ -102,7 +102,7 @@ Cloudflare Pages detects the push automatically and redeploys within ~20 seconds
 ## Before launch checklist
 
 - [ ] Replace `YOUR_FORMSPREE_ID` in `contact.html` (get it at formspree.io — free)
-- [ ] Replace `info@prayanlabels.com` with your real email in `contact.html`
+- [ ] Replace `gaurav@prayanlabels.com` with your real email in `contact.html`
 - [ ] Fill in your actual address in `contact.html`
 - [ ] Add real product photos to `images/products/` and update `data-src` in `gallery.html`
 - [ ] Replace placeholder testimonials and client logos in `gallery.html`
