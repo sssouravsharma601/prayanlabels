@@ -30,7 +30,18 @@
   <meta name="theme-color" content="#0f3460" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <!-- LCP hero product image — preloaded with highest priority -->
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=900&q=80"
+    imagesrcset="https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=420&q=80 420w,
+                 https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=700&q=80 700w,
+                 https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=900&q=80 900w"
+    imagesizes="(max-width:768px) 420px, (max-width:1200px) 700px, 900px"
+    fetchpriority="high" />
+  <!-- Hero background — preloaded to avoid render-blocking -->
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1765484253358-70f69979d307?auto=format&fit=crop&w=1920&q=80" />
   <link rel="stylesheet" href="css/style.css" />
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -190,13 +201,23 @@
     </div>
     <div class="hero__img-wrap">
       <div class="hero__img-main">
-        <img src="https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=900&q=80" alt="Latkan hang tag on garment" />
+        <img
+          src="https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=900&q=80"
+          srcset="https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=420&q=80 420w,
+                  https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=700&q=80 700w,
+                  https://images.unsplash.com/photo-1698934219783-3c002a192aab?auto=format&fit=crop&w=900&q=80 900w"
+          sizes="(max-width:768px) 420px, (max-width:1200px) 700px, 900px"
+          alt="Latkan hang tag on garment"
+          width="900" height="1200"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async" />
       </div>
       <div class="hero__img-sm" style="margin-top:0.75rem;">
-        <img src="https://images.unsplash.com/photo-1689287428416-fc9a4ec873ce?auto=format&fit=crop&w=500&q=80" alt="Hang tag on garment" />
+        <img src="https://images.unsplash.com/photo-1689287428416-fc9a4ec873ce?auto=format&fit=crop&w=500&q=80" alt="Hang tag on garment" width="500" height="200" loading="lazy" decoding="async" />
       </div>
       <div class="hero__img-sm">
-        <img src="https://images.unsplash.com/photo-1542272606-fe889704e0f6?auto=format&fit=crop&w=500&q=80" alt="Woven brand label" />
+        <img src="https://images.unsplash.com/photo-1542272606-fe889704e0f6?auto=format&fit=crop&w=500&q=80" alt="Woven brand label" width="500" height="200" loading="lazy" decoding="async" />
       </div>
       <div class="hero__float-badge">
         <strong>100%</strong>
